@@ -4,27 +4,9 @@ import ContactForm from './ContactForm/ContactForm';
 // import Filter from './Filter/Filter';
 
 const App = () => {
-  // const deleteContact = id => {
-  //   const allContacts = [...contacts];
-  //   const index = allContacts.findIndex(person => person.id === id);
-  //   allContacts.splice(index, 1);
-  //   setContacts(allContacts);
-  // };
-
   // const handleFilter = e => {
   //   setFilter(e.target.value);
   // };
-
-  // useEffect(() => {
-  //   const storageContacts = JSON.parse(localStorage.getItem('contacts'));
-  //   if (storageContacts) {
-  //     setContacts(storageContacts);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem('contacts', JSON.stringify(contacts));
-  // }, [contacts]);
 
   // const list = contacts.filter(
   //   contact =>

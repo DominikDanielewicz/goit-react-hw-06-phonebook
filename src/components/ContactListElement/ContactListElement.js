@@ -1,8 +1,16 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import css from './ContactListElement.module.css';
+import { useDispatch } from 'react-redux';
+import { deleteContact } from 'redux/contactsSlice';
 
 const ContactListElement = props => {
+  const dispatch = useDispatch();
+
+  const ContactDeleteHandler = () => {
+    dispatch(deleteContact(props.id));
+  };
+
   return (
     <li className={css.contactElement}>
       <p>{props.name}</p>
@@ -10,7 +18,7 @@ const ContactListElement = props => {
       <button
         className={css.contactElement__button}
         type="button"
-        onClick={props.deleteContact}
+        onClick={ContactDeleteHandler}
       >
         Delete
       </button>

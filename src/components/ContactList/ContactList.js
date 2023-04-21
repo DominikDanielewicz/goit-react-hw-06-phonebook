@@ -14,13 +14,13 @@ const ContactList = () => {
         contacts.map(contact => (
           <ContactListElement
             key={contact.id}
+            id={contact.id}
             name={contact.name}
             number={contact.number}
-            deleteContact={() => console.log('delete')}
           />
         ))
       ) : (
-        <p>There are no contacts</p>
+        <p>Your contacts list is empty. Add your contacts</p>
       )}
     </ul>
   );
