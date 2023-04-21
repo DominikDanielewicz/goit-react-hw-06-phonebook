@@ -1,24 +1,17 @@
-import React, { useState } from 'react';
-import propTypes from 'prop-types';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addContact } from 'redux/contactsSlice';
+// import propTypes from 'prop-types';
 import css from './ContactForm.module.css';
 
-const ContactForm = props => {
-  const [formValues, setFormValues] = useState({
-    name: '',
-    number: '',
-  });
-
-  const { name, number } = formValues;
+const ContactForm = () => {
+  const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
-    const { name, number } = formValues;
-    props.addContact(name, number);
-  };
-
-  const handleChange = e => {
-    const { name, value } = e.target;
-    setFormValues(prevState => ({ ...prevState, [name]: value }));
+    const form = e.target;
+    dispatch(addContact(form.elements.name.value, form.elements.number.value));
+    form.reset();
   };
 
   return (
@@ -29,8 +22,6 @@ const ContactForm = props => {
       <input
         className={css.contactForm__field}
         id="name"
-        value={name}
-        onChange={handleChange}
         type="text"
         name="name"
         pattern="^[a-zA-ZĄąĆćĘęŃńÓóŚśŹźŻż]+(([' -][a-zA-ZĄąĆćĘęŃńÓóŚśŹźŻż])?[a-zA-ZĄąĆćĘęŃńÓóŚśŹźŻż]*)*$"
@@ -43,8 +34,6 @@ const ContactForm = props => {
       <input
         className={css.contactForm__field}
         id="number"
-        value={number}
-        onChange={handleChange}
         type="tel"
         name="number"
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -58,9 +47,9 @@ const ContactForm = props => {
   );
 };
 
-ContactForm.propTypes = {
-  addContact: propTypes.func.isRequired,
-  deleteContact: propTypes.func.isRequired,
-};
+// ContactForm.propTypes = {
+//   addContact: propTypes.func.isRequired,
+//   deleteContact: propTypes.func.isRequired,
+// };
 
 export default ContactForm;
