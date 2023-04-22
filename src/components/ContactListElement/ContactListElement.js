@@ -29,7 +29,6 @@ const ContactListElement = props => {
 ContactListElement.propTypes = {
   name: propTypes.string.isRequired,
   number: propTypes.string.isRequired,
-  onClick: propTypes.func,
 };
 
 export default ContactListElement;
