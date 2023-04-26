@@ -30,7 +30,7 @@ const ContactList = () => {
           />
         ))
       ) : (
-        <p>Your contacts list is empty. Add your contacts</p>
+        <p>Your phonebook is empty. Add your contacts</p>
       )}
     </ul>
   );
