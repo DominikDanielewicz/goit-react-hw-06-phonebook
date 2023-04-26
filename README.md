@@ -10,7 +10,6 @@ https://dominikdanielewicz.github.io/goit-react-hw-06-phonebook/
 
 Task completed during the GoIT Fullstack Developer course. The previous
 Phonebook project now refactored using Redux Toolkit to manage the state.
-Project is based on create-react-app.
 
 ### Technologies
 
